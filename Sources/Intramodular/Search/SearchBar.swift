@@ -77,9 +77,6 @@ extension SearchBar: UIViewRepresentable {
         
         uiView.delegate = context.coordinator
         
-        uiView.searchTextField.textColor = .white
-        
-        
         return uiView
     }
     
@@ -102,13 +99,16 @@ extension SearchBar: UIViewRepresentable {
         }
         
         uiView.searchBarStyle = searchBarStyle
+        uiView.searchTextField.textColor = .black
+        uiView.searchTextField.backgroundColor = .white
+        uiView.searchTextField.borderStyle = .roundedRect
+        uiView.tintColor = .white
+        uiView.searchTextField.tintColor = UIColor.black.withAlphaComponent(0.7)
         
         if uiView.text != text {
             uiView.text = text
         }
-        
-        uiView.tintColor = environment.tintColor?.toUIColor()
-        
+                
         if let showsCancelButton = showsCancelButton {
             if uiView.showsCancelButton != showsCancelButton {
                 uiView.setShowsCancelButton(showsCancelButton, animated: true)
