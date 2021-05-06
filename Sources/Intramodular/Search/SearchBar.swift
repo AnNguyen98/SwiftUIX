@@ -77,6 +77,9 @@ extension SearchBar: UIViewRepresentable {
         
         uiView.delegate = context.coordinator
         
+        uiView.searchTextField.textColor = .white
+        
+        
         return uiView
     }
     
